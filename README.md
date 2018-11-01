@@ -1,7 +1,7 @@
 bestcaptchasolver - Bestcaptchasolver nodeJS client API library
 ===============================================================
 
-bestcaptchasolve-nodejs is a super easy to use bypass captcha nodeJS API wrapper for bestcaptchasolver.com captcha service
+bestcaptchasolver-nodejs is a super easy to use bypass captcha nodeJS API wrapper for bestcaptchasolver.com captcha service
 
 ## Installation
 

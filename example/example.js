@@ -3,7 +3,7 @@
 // require library
 var bestcaptchasolver = require('../');
 // check /account for accesskey
-const ACCESS_TOKEN = '76A0CBD91760484E84C11F9FDF0184C6';
+const ACCESS_TOKEN = 'BAC21DFA5FE5415CA9608BED45F8D703';
 
 // log what's happening to UI and console
 function log(txt) {
@@ -49,6 +49,8 @@ function example() {
     }).then(function (data) {
         // --------------------------------------
         log('Recaptcha response: ' + data.gresponse);
+        //log('Proxy status: ' + data.proxy_status);
+
         // Set captcha bad
         // ---------------
     //     return bestcaptchasolver.set_captcha_bad(captcha_id);

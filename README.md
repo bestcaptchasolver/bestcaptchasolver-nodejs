@@ -32,14 +32,18 @@ bestcaptchasolver.account_balance().then(function (balance) {
 **Submit image captcha**
 
 The submission of image captcha is done by sending us the image as a b64 encoded string.
-There's the `case_sensitive` parameter as well, which is optional, and by default `false`
 
 ``` javascript
 bestcaptchasolver.submit_captcha({
     b64image: captcha,
-    //case_sensitive: true,                 // optional defaults to false
-    //affiliate_id: 'ID of affiliate'       // optional
-});
+    // is_case: true,         // case sensitive, default: false, optional
+    // is_phrase: true,       // contains at least one space, default: false, optional
+    // is_math: true,         // math calculation captcha, default: false, optional
+    // alphanumeric: 2,        // 1 (digits only) or 2 (letters only), default: all characters
+    // minlength: 2,           // minimum length of captcha text, default: any
+    // maxlength: 3,           // maximum length of captcha text, default: any
+    // affiliate_id: 'ID of affiliate'       // default: None, optional
+}).then(function (id)) { /* use id to retrieve text */ };
 ```
 
 **Submit reCAPTCHA**
@@ -50,29 +54,52 @@ The `page_url` and `site_key` are the only requirements. There are other optiona
 bestcaptchasolver.submit_recaptcha({
     page_url: 'bestcaptchasolver.com',
     site_key: '6LfGJmcUAAAAALGtIb_FxC0LXm_GwOLyJAfbbUCN',
-    //user_agent: 'Your user agent',    // optional
-    //proxy: 'abc:def@12.35.56.78:4321 or 12.35.56.78:4321',        // optional
-    //type: '1', // 1 - normal, 2 - invisible, 3 - v3, optional and defaults to 1
-    //v3_action: '',   // v3 action, optional
-    //v3_min_score: '0.3', // if v3, score to target, optional
-    //affiliate_id: 'ID of affiliate'       // optional
-});
+    // user_agent: 'Your user agent',    // optional
+    // proxy: 'abc:def@12.35.56.78:4321 or 12.35.56.78:4321',        // optional
+    // type: '1', // 1 - normal, 2 - invisible, 3 - v3, optional and defaults to 1
+    // v3_action: '',   // v3 action, optional
+    // v3_min_score: '0.3', // if v3, score to target, optional
+    // affiliate_id: 'ID of affiliate'       // optional
+}).then(function (id)) { /* use id to retrieve response */ };
 ```
 
-Just like the image submission method, this method also returns an ID, which is then used
-to get the text or gresponse.
+**Geetest**
+- domain
+- gt
+- challenge
+
+```javascript
+bestcaptchasolver.submit_geetest({
+    domain: 'DOMAIN_HERE',
+    gt: 'GT_HERE',
+    challenge: 'CHALLENGE_HERE',
+    // affiliate_id: 'ID of affiliate'       // optional
+}).then(function (id)) { /* use id to retrieve solution */ };
+```
+
+**Capy**
+- page_url
+- site_key
+
+```javascript
+bestcaptchasolver.submit_capy({
+    page_url: 'PAGE_URL_HERE',
+    site_key: 'SITE_KEY_HERE',
+    // affiliate_id: 'ID of affiliate'       // optional
+}).then(function (id)) { /* use id to retrieve solution */ };
+```
 
 **Retrieve**
 
-Retrieval is done by passing the ID
+Retrieval is done by passing the ID, for all captchas
 
 ``` javascript
-bestcaptchasolver.retrieve_captcha(id);
+bestcaptchasolver.retrieve_captcha(id).then(function (data) { console.log(JSON.stringify(data)); });
 ```
 
 This method returns an object, with the `text` attribute for image captcha or `gresponse` if submission was done for reCAPTCHA
 
-**If submitted with proxy, get proxy status**
+**If reCAPTCHA is submitted with proxy, get proxy status**
 
 ```javascript
 log('Recaptcha response: ' + data.gresponse);
@@ -85,7 +112,7 @@ bestcaptchasolver.set_captcha_bad(captcha_id);
 ```
 
 ## Examples
-Check the example/example.js
+Check the `examples` folder
 
 ## License
 API library is licensed under the MIT License

@@ -1,6 +1,6 @@
 {
   "name": "bestcaptchasolver",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "bestcaptchasolve-nodejs is a super easy to use bypass captcha nodeJS API wrapper for bestcaptchasolver.com captcha service ",
   "main": "index.js",
   "scripts": {

@@ -89,6 +89,18 @@ bestcaptchasolver.submit_capy({
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
 
+**hCaptcha**
+- page_url
+- site_key
+
+```javascript
+bestcaptchasolver.submit_hcaptcha({
+    page_url: 'PAGE_URL_HERE',
+    site_key: 'SITE_KEY_HERE',
+    // affiliate_id: 'ID of affiliate'       // optional
+}).then(function (id)) { /* use id to retrieve solution */ };
+```
+
 **Retrieve**
 
 Retrieval is done by passing the ID, for all captchas

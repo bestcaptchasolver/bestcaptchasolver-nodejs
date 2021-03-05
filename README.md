@@ -114,6 +114,21 @@ bestcaptchasolver.submit_hcaptcha({
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
 
+**FunCaptcha (Arkose Labs)**
+- page_url
+- s_url
+- site_key
+
+```javascript
+bestcaptchasolver.submit_hcaptcha({
+    page_url: 'https://abc.com',
+    s_url: 'https://api.arkoselabs.com',
+    site_key: '11111111-1111-1111-1111-111111111111',
+    // data: '{"x":"y"}',  // optional
+    // affiliate_id: 'ID of affiliate'       // optional
+}).then(function (id)) { /* use id to retrieve solution */ };
+```
+
 **Retrieve**
 
 Retrieval is done by passing the ID, for all captchas

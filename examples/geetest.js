@@ -24,6 +24,7 @@ function example() {
             domain: 'DOMAIN_HERE',
             gt: 'GT_HERE',
             challenge: 'CHALLENGE_HERE',
+            // api_server: 'GT_DOMAIN_HERE',         // optional
             // affiliate_id: 'ID of affiliate'       // optional
         });
     }).then(function (id) {

@@ -23,7 +23,11 @@ function example() {
         return bestcaptchasolver.submit_hcaptcha({
             page_url: 'PAGE_URL_HERE',
             site_key: 'SITE_KEY_HERE',
-            // affiliate_id: 'ID of affiliate'       // optional
+            // invisible: 1,
+            // payload: {rqdata: 'from web requests'},
+            // user_agent: 'your UA',
+            // proxy: '12.34.54.56:1234'
+            // affiliate_id: 'ID of affiliate'
         });
     }).then(function (id) {
         captcha_id = id;

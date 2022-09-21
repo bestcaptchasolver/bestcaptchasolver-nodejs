@@ -155,6 +155,25 @@ bestcaptchasolver.submit_hcaptcha({
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
 
+**Task**
+- template_name
+- page_url
+- variables
+- user_agent (optional)
+- proxy (optional)
+- affiliate_id (optional)
+
+```javascript
+bestcaptchasolver.submit_task({
+    template_name: 'Login test page',
+    page_url: 'https://bestcaptchasolver.com/automation/login',
+    variables: {"username": "xyz", "password": "0000"},
+    // user_agent: 'your UA',
+    // proxy: '12.34.54.56:1234'
+    // affiliate_id: 'ID of affiliate'
+}).then(function (id)) { /* use id to retrieve solution */ };
+```
+
 **Retrieve**
 
 Retrieval is done by passing the ID, for all captchas

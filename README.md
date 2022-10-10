@@ -174,6 +174,20 @@ bestcaptchasolver.submit_task({
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
 
+#### Task pushVariables
+Update task variables while it is being solved by the worker. Useful when dealing with data / variables, of which
+value you don't know, only after a certain step or action of the task. For example, in websites that require 2 factor
+authentication code.
+
+When the task (while running on workers machine) is getting to an action defined in the template, that requires a variable, but variable was not
+set with the task submission, it will wait until the variable is updated through push.
+
+The `bestcaptchasolver.task_push_variables(captcha_id, push_variables)` method can be used as many times as it is needed.
+
+```javascript
+bestcaptchasolver.task_push_variables(captcha_id, {"tfa_code": "4965"})
+```
+
 **Retrieve**
 
 Retrieval is done by passing the ID, for all captchas
@@ -207,7 +221,7 @@ API library is licensed under the MIT License
 More info about the API parameters can be found [here](https://bestcaptchasolver.com/captchabypass-api)
 
 
-<sup><sub>captcha, bypasscaptcha, decaptcher, decaptcha, 2captcha, deathbycaptcha, anticaptcha, 
-bypassrecaptchav2, bypassnocaptcharecaptcha, bypassinvisiblerecaptcha, captchaservicesforrecaptchav2, 
+<sup><sub>captcha, bypasscaptcha, decaptcher, decaptcha, 2captcha, deathbycaptcha, anticaptcha,
+bypassrecaptchav2, bypassnocaptcharecaptcha, bypassinvisiblerecaptcha, captchaservicesforrecaptchav2,
 recaptchav2captchasolver, googlerecaptchasolver, recaptchasolverpython, recaptchabypassscript</sup></sub>
 

@@ -31,7 +31,12 @@ function example() {
     }).then(function (id) {
         captcha_id = id;
         log('Got ID ' + id + ', waiting for completion ...');
-        return bestcaptchasolver.retrieve_captcha(id);
+
+        // submit pushVariables while task is being solved by the worker
+        // very helpful, for e.g. in cases of 2FA authentication
+        // return bestcaptchasolver.task_push_variables(captcha_id, {"tfa_code": "4965"})
+    }).then(() => {
+        return bestcaptchasolver.retrieve_captcha(captcha_id);
     }).then(function (data) {
         log('Solution: ' + JSON.stringify(data.solution));
         // return bestcaptchasolver.set_captcha_bad(captcha_id);     // set captcha as bad

@@ -174,6 +174,28 @@ bestcaptchasolver.submit_hcaptcha({
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
 
+**Turnstile (Cloudflare)**
+- page_url
+- site_key
+- action (optional)
+- cdata (optional)
+- domain (optional)
+- user_agent (optional)
+- proxy (optional)
+
+```javascript
+bestcaptchasolver.submit_hcaptcha({
+    page_url: 'PAGE_URL_HERE',
+    site_key: 'SITE_KEY_HERE',
+    // action: 'taken from page source, optional',
+    // cdata: 'taken from page source, optional',
+    // domain: 'challenges.cloudflare.com',
+    // user_agent: 'your UA',
+    // proxy: '12.34.54.56:1234'
+    // affiliate_id: 'ID of affiliate'
+}).then(function (id)) { /* use id to retrieve solution */ };
+```
+
 **Task**
 - template_name
 - page_url

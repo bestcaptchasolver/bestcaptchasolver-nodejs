@@ -66,10 +66,11 @@ bestcaptchasolver.submit_recaptcha({
     //
     // type: '1',
     //
-    // user_agent: 'Your user agent',    // optional
+    // user_agent: 'Your user agent', // optional
     // proxy: 'abc:def@12.35.56.78:4321 or 12.35.56.78:4321',        // optional
     // v3_action: '',   // v3 action, optional
     // v3_min_score: '0.3', // if v3, score to target, optional
+    // domain: 'www.google.com',      // optional
     // data_s: 'recaptcha data-s parameter used in loading reCAPTCHA',
     // cookie_input: 'a=b;c=d',       // used in reCAPTCHA solving, optional
     // affiliate_id: 'ID of affiliate'       // optional
@@ -136,6 +137,7 @@ bestcaptchasolver.submit_capy({
 - site_key
 - invisible (optional)
 - payload (optional)
+- domain (optional)
 - user_agent (optional)
 - proxy (optional)
 
@@ -145,6 +147,7 @@ bestcaptchasolver.submit_hcaptcha({
     site_key: 'SITE_KEY_HERE',
     // invisible: 1,
     // payload: {rqdata: 'from web requests'},
+    // domain: 'www.google.com',
     // user_agent: 'your UA',
     // proxy: '12.34.54.56:1234'
     // affiliate_id: 'ID of affiliate'

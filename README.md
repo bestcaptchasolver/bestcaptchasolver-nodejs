@@ -81,6 +81,8 @@ bestcaptchasolver.submit_recaptcha({
 - gt
 - challenge
 - api_server (optional)
+- user_agent (optional)
+- proxy (optional)
 
 ```javascript
 bestcaptchasolver.submit_geetest({
@@ -88,6 +90,8 @@ bestcaptchasolver.submit_geetest({
     gt: 'GT_HERE',
     challenge: 'CHALLENGE_HERE',
     // api_server: 'GT_DOMAIN_HERE',         // optional
+    // user_agent: 'your user agent',        // optional
+    // proxy: 'user:pass@123.45.67.89:3031', // optional
     // affiliate_id: 'ID of affiliate'       // optional
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
@@ -96,6 +100,8 @@ bestcaptchasolver.submit_geetest({
 **GeetestV4**
 - domain
 - captchaid
+- user_agent (optional)
+- proxy (optional)
 
 **Important:** This is not the captchaid that's in our system that you receive while submitting a captcha. Gather this from HTML source of page with geetestv4 captcha, inside the `<script>` tag you'll find a link that looks like this: https://i.imgur.com/XcZd47y.png
 
@@ -103,6 +109,8 @@ bestcaptchasolver.submit_geetest({
 bestcaptchasolver.submit_geetest_v4({
     domain: 'https://example.com',
     captchaid: '647f5ed2ed8acb4be36784e01556bb71',
+    // user_agent: 'your user agent',        // optional
+    // proxy: 'user:pass@123.45.67.89:3031', // optional
     // affiliate_id: 'ID of affiliate'       // optional
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
@@ -110,11 +118,15 @@ bestcaptchasolver.submit_geetest_v4({
 **Capy**
 - page_url
 - site_key
+- user_agent (optional)
+- proxy (optional)
 
 ```javascript
 bestcaptchasolver.submit_capy({
     page_url: 'PAGE_URL_HERE',
     site_key: 'SITE_KEY_HERE',
+    // user_agent: 'your user agent',        // optional
+    // proxy: 'user:pass@123.45.67.89:3031', // optional
     // affiliate_id: 'ID of affiliate'       // optional
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
@@ -126,7 +138,6 @@ bestcaptchasolver.submit_capy({
 - payload (optional)
 - user_agent (optional)
 - proxy (optional)
-- affiliate_id (optional)
 
 ```javascript
 bestcaptchasolver.submit_hcaptcha({
@@ -144,13 +155,18 @@ bestcaptchasolver.submit_hcaptcha({
 - page_url
 - s_url
 - site_key
+- data (optional)
+- user_agent (optional)
+- proxy (optional)
 
 ```javascript
 bestcaptchasolver.submit_hcaptcha({
     page_url: 'https://abc.com',
     s_url: 'https://api.arkoselabs.com',
     site_key: '11111111-1111-1111-1111-111111111111',
-    // data: '{"x":"y"}',  // optional
+    // data: '{"x":"y"}',                    // optional
+    // user_agent: 'your user agent',        // optional
+    // proxy: 'user:pass@123.45.67.89:3031', // optional
     // affiliate_id: 'ID of affiliate'       // optional
 }).then(function (id)) { /* use id to retrieve solution */ };
 ```
@@ -161,7 +177,6 @@ bestcaptchasolver.submit_hcaptcha({
 - variables
 - user_agent (optional)
 - proxy (optional)
-- affiliate_id (optional)
 
 ```javascript
 bestcaptchasolver.submit_task({

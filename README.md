@@ -147,7 +147,7 @@ bestcaptchasolver.submit_hcaptcha({
     site_key: 'SITE_KEY_HERE',
     // invisible: 1,
     // payload: {rqdata: 'from web requests'},
-    // domain: 'www.google.com',
+    // domain: 'hcaptcha.com',
     // user_agent: 'your UA',
     // proxy: '12.34.54.56:1234'
     // affiliate_id: 'ID of affiliate'
@@ -163,7 +163,7 @@ bestcaptchasolver.submit_hcaptcha({
 - proxy (optional)
 
 ```javascript
-bestcaptchasolver.submit_hcaptcha({
+bestcaptchasolver.submit_funcaptcha({
     page_url: 'https://abc.com',
     s_url: 'https://api.arkoselabs.com',
     site_key: '11111111-1111-1111-1111-111111111111',
@@ -184,7 +184,7 @@ bestcaptchasolver.submit_hcaptcha({
 - proxy (optional)
 
 ```javascript
-bestcaptchasolver.submit_hcaptcha({
+bestcaptchasolver.submit_turnstile({
     page_url: 'PAGE_URL_HERE',
     site_key: 'SITE_KEY_HERE',
     // action: 'taken from page source, optional',
